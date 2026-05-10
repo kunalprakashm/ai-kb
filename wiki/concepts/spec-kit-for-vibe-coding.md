@@ -53,7 +53,7 @@ Spec Kit's `/speckit.*` slash commands are **procedural memory** for the agent �
 ## When NOT to use it
 
 - ❌ Throwaway scripts (one-shot data wrangling, quick chart)
-- ❌ Pure exploration / scratch prototyping where the question itself is unclear — **first** use a [context doc](../templates/context-doc-for-prototyping.md) to figure out the question, *then* Spec Kit if you decide to build
+- ❌ Pure exploration / scratch prototyping where the question itself is unclear — **first** use a [context doc](../playbooks/context-doc-for-prototyping.md) to figure out the question, *then* Spec Kit if you decide to build
 - ❌ Tiny tweaks to existing code
 
 ## "Vibe coding" inside Spec Kit
@@ -79,7 +79,7 @@ So the workflow becomes: **plan deliberately, then vibe inside the lines.**
 
 - [LLM wiki for agents](llm-wiki-for-agents.md) — same philosophy: persistent artifacts > ephemeral chats
 - [Agent memory types](agent-memory-types.md) — Spec Kit commands as procedural memory
-- [Context doc for prototyping](../templates/context-doc-for-prototyping.md) — use *before* Spec Kit when the question is fuzzy
+- [Context doc for prototyping](../playbooks/context-doc-for-prototyping.md) — use *before* Spec Kit when the question is fuzzy
 
 ## Sources
 

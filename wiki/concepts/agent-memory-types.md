@@ -99,7 +99,7 @@ This repo's `log.md` (episodic) → `wiki/` (semantic) → `AGENTS.md` (procedur
 
 - [LLM wiki for agents](llm-wiki-for-agents.md) — wiki = externalized semantic memory
 - [Spec Kit for vibe coding](spec-kit-for-vibe-coding.md) — Spec Kit's `/speckit.*` commands as procedural memory
-- [Context doc for prototyping](../templates/context-doc-for-prototyping.md) — a procedural template for prototyping decisions
+- [Context doc for prototyping](../playbooks/context-doc-for-prototyping.md) — a procedural template for prototyping decisions
 
 ## Sources
 

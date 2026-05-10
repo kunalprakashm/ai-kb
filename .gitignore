@@ -6,3 +6,12 @@ Thumbs.db
 .obsidian/cache
 .vscode/
 .idea/
+
+# MkDocs build output (auto-generated, deployed via GitHub Actions)
+site/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

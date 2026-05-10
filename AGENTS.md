@@ -18,16 +18,21 @@ This is **not** a RAG-on-the-fly system. It is a **persistent, compounding artif
 ai-kb/
 ├── AGENTS.md              ← this file (the schema)
 ├── README.md              ← top-level intro
-├── index.md               ← content catalog (you maintain on every ingest)
 ├── log.md                 ← append-only chronological log
+├── mkdocs.yml             ← MkDocs Material site config (don't break)
+├── requirements.txt       ← Python deps for site build
+├── .github/workflows/     ← Pages auto-deploy on push to main
 ├── raw/                   ← immutable source documents (you READ, never modify)
 │   └── assets/            ← downloaded images, PDFs
-└── wiki/                  ← LLM-maintained markdown (you OWN this)
+└── wiki/                  ← LLM-maintained markdown (you OWN this) — also MkDocs docs_dir
+    ├── index.md           ← site homepage + content catalog (you maintain on every ingest)
     ├── concepts/          ← ideas, frameworks, patterns (e.g., "RAG", "RLHF")
     ├── entities/          ← tools, people, companies, models (e.g., "Spec Kit", "Karpathy")
     ├── sources/           ← per-source summary pages (one page per ingested source)
-    └── templates/         ← reusable templates (e.g., context-doc, evaluation rubric)
+    └── playbooks/         ← reusable playbooks (e.g., context-doc, evaluation rubric)
 ```
+
+**Important:** `wiki/` is rendered as a public site at https://kunalprakashm.github.io/ai-kb/. Every push to `main` triggers a rebuild. Don't put secrets, drafts you wouldn't show, or Microsoft-internal content in `wiki/` — keep that in `raw/` (which is also public, so be careful) or in a separate private location.
 
 ## Page conventions
 
@@ -57,7 +62,7 @@ sources: [path/to/raw/file.md, https://example.com/article]
 - Use **relative markdown links**: `[Spec Kit](../entities/spec-kit.md)` (renders on GitHub)
 - Obsidian `[[wikilinks]]` are also OK if Kunal opens this in Obsidian later
 - **Always cross-reference**: when you mention a concept that has its own page, link to it
-- If you mention a concept that *should* have a page but doesn't, create a stub or note it in `index.md` under "Stubs needed"
+- If you mention a concept that *should* have a page but doesn't, create a stub or note it in `wiki/index.md` under "Stubs needed"
 
 ## Workflows
 
@@ -68,7 +73,7 @@ sources: [path/to/raw/file.md, https://example.com/article]
 3. Create `wiki/sources/<slug>.md` summarizing the source (frontmatter + TL;DR + key claims + my-take)
 4. Update relevant pages in `wiki/concepts/` and `wiki/entities/` — strengthen, revise, or contradict prior claims
 5. Add cross-references both directions
-6. Update `index.md` (add new pages, update summaries)
+6. Update `wiki/index.md` (add new pages, update summaries) — note this also re-renders the site landing page
 7. Append to `log.md`:
    ```
    ## [YYYY-MM-DD] ingest | <Source Title>
@@ -81,7 +86,7 @@ A single source might touch 10–15 wiki pages. That's expected.
 
 ### Query (Kunal asks a question)
 
-1. Read `index.md` first to find relevant pages
+1. Read `wiki/index.md` first to find relevant pages
 2. Drill into those pages, follow links
 3. If needed, fall back to `raw/` for primary detail
 4. Answer with **citations** (link to wiki pages and raw sources)
@@ -111,7 +116,7 @@ Suggest new questions to investigate and new sources to look for. Append a `## [
 - **Bullet lists** for enumerable things; prose for arguments and synthesis.
 - **Code blocks** for commands, snippets, and examples.
 - **Mermaid diagrams** when structure helps (GitHub renders them).
-- **Voice:** second person ("you") in templates, third person elsewhere. Don't write in first person ("I think...") unless quoting Kunal.
+- **Voice:** second person ("you") in playbooks, third person elsewhere. Don't write in first person ("I think...") unless quoting Kunal.
 
 ## Things you should NOT do
 
@@ -119,7 +124,7 @@ Suggest new questions to investigate and new sources to look for. Append a `## [
 - Don't delete pages without surfacing the deletion in `log.md`
 - Don't write the wiki silently — discuss meaningful updates with Kunal first
 - Don't add chat-history fluff to wiki pages (e.g., "As we discussed earlier...")
-- Don't use embedding-based RAG infra; index.md is the search index at this scale
+- Don't use embedding-based RAG infra; `wiki/index.md` is the search index at this scale (MkDocs Material also adds full-text search on the rendered site)
 
 ## Co-evolution
 
