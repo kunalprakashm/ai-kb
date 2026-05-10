@@ -25,3 +25,10 @@
 - Synthesis: siblings, not duplicates. Both fight "vibes" but operate at different funnel stages (context doc = *should I build?*; Spec Kit = *how do I build?*).
 - Filed back: enhanced "Related" sections in both pages with a comparison table and pipeline frame (Idea → Context doc → decide → Spec Kit → Code).
 - Updated: `wiki/concepts/spec-kit-for-vibe-coding.md`, `wiki/playbooks/context-doc-for-prototyping.md`
+
+## [2026-05-09] query | "Context doc for prototype vs Spec Kit for production?"
+
+- Refinement (not filed back per user choice): the dimensions are orthogonal. **Context doc is always upstream of building** (scales 5 min for prototype → 30 min for production). **Spec Kit's intensity scales with stakes** (skip for throwaway, full for production).
+- Common prototype failure ≠ sloppy code; it's "we built the wrong thing because we skipped JTBD / what's-been-tried." A 5-min context doc catches that.
+- Decision flow: Vague idea → context doc → decide to build → {prototype: vibe code or light Spec Kit | production: full Spec Kit}.
+- User opted to keep the answer in chat history only; no wiki update.
