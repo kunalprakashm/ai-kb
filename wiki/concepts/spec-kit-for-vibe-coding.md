@@ -77,9 +77,28 @@ So the workflow becomes: **plan deliberately, then vibe inside the lines.**
 
 ## Related
 
+### Sibling: [Context doc for prototyping](../playbooks/context-doc-for-prototyping.md)
+
+A 6-question PM-facing template (Customer / JTBD / Good / Tried / Constraints / Success) used **upstream** of Spec Kit. Both fight "vibes" — but at different points in the funnel:
+
+| | Context doc | Spec Kit |
+|---|---|---|
+| **Stage** | *Should I build?* | *How do I build?* |
+| **Frame** | JTBD / customer / problem | Requirements / architecture |
+| **Output** | A decision (build / kill / reframe) | Working code |
+| **Time cost** | ~30 min | Hours-to-days |
+| **Audience** | PM first; eng later | PM + eng + AI agent together |
+| **Granularity** | One page, 6 questions | Multi-file (constitution + spec + plan + tasks) |
+| **Fails when** | You skip Q4 ("what's been tried") | You skip the constitution |
+
+**Pipeline:** Idea → Context doc → *(decide to build)* → Spec Kit → Code.
+
+Shared spine: ordered steps where later answers depend on earlier ones, durable written artifacts, anti-vibe discipline, pairs naturally with AI agents.
+
+### Other related
+
 - [LLM wiki for agents](llm-wiki-for-agents.md) — same philosophy: persistent artifacts > ephemeral chats
-- [Agent memory types](agent-memory-types.md) — Spec Kit commands as procedural memory
-- [Context doc for prototyping](../playbooks/context-doc-for-prototyping.md) — use *before* Spec Kit when the question is fuzzy
+- [Agent memory types](agent-memory-types.md) — Spec Kit commands as procedural memory; spec/plan/tasks files as semantic memory
 
 ## Sources
 

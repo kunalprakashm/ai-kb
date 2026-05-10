@@ -127,8 +127,27 @@ _(none yet — file completed context docs as `wiki/sources/context-<project>.md
 
 ## Related
 
-- [Spec Kit for vibe coding](../concepts/spec-kit-for-vibe-coding.md) — the next step after this doc, if you decide to build
-- [LLM wiki for agents](../concepts/llm-wiki-for-agents.md) — the meta-pattern; this doc is itself an instance of "make the implicit explicit"
+### Sibling: [Spec Kit for vibe coding](../concepts/spec-kit-for-vibe-coding.md)
+
+The natural **downstream** counterpart. Once the context doc says "yes, build it," Spec Kit takes over. Both fight "vibes," but operate at different funnel stages:
+
+| | Context doc *(this page)* | Spec Kit |
+|---|---|---|
+| **Stage** | *Should I build?* | *How do I build?* |
+| **Frame** | JTBD / customer / problem | Requirements / architecture |
+| **Output** | A decision (build / kill / reframe) | Working code |
+| **Time cost** | ~30 min | Hours-to-days |
+| **Audience** | PM first; eng later | PM + eng + AI agent together |
+| **Granularity** | One page, 6 questions | Multi-file (constitution + spec + plan + tasks) |
+| **Fails when** | You skip Q4 ("what's been tried") | You skip the constitution |
+
+**Pipeline:** Idea → Context doc → *(decide to build)* → Spec Kit → Code.
+
+Shared spine: ordered steps where later answers depend on earlier ones, durable written artifacts, anti-vibe discipline, pairs naturally with AI agents. The context doc decides *whether* there's a problem; Spec Kit specifies *how* to solve it.
+
+### Other related
+
+- [LLM wiki for agents](../concepts/llm-wiki-for-agents.md) — the meta-pattern; this doc is itself an instance of "make the implicit explicit before the AI runs"
 
 ## Sources
 
