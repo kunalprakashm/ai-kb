@@ -1,0 +1,21 @@
+/* Wrap long lines in code blocks instead of horizontal-scrolling.
+   The wiki is prose-heavy; long lines in markdown templates and quoted
+   bullet lists are nicer to read wrapped than scrolled. */
+.md-typeset pre > code,
+.md-typeset .highlight pre > code,
+.md-typeset .highlight code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* But keep mermaid blocks and tables horizontally scrollable —
+   they need their full width to render correctly. */
+.md-typeset .mermaid,
+.md-typeset .tabbed-set {
+  white-space: normal;
+}
+
+.md-typeset table:not([class]) {
+  display: table;
+}

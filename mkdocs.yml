@@ -85,3 +85,6 @@ extra:
   generator: false
 
 copyright: Personal knowledge base — not for redistribution.
+
+extra_css:
+  - stylesheets/extra.css
