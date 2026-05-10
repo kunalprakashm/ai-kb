@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.obsidian/workspace*
+.obsidian/cache
+.vscode/
+.idea/
