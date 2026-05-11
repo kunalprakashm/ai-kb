@@ -1,9 +1,9 @@
 ---
 title: "Context doc for prototyping"
 type: template
-tags: [pm, prototyping, jtbd, framework]
+tags: [pm, prototyping, jtbd, framework, interview]
 created: 2026-05-09
-updated: 2026-05-09
+updated: 2026-05-10
 sources: []
 ---
 
@@ -16,6 +16,7 @@ sources: []
 - Starting a new prototype or experiment
 - Before kicking off a feature spec with eng
 - Before vibing/spec-kitting with an AI agent
+- **PM interviews** — the 6 questions *are* the answer template ([see below](#interview-adaptation))
 - When a stakeholder asks "can you look into X?" — fill this out together to align scope
 - Anytime the problem feels mushy
 
@@ -120,6 +121,53 @@ The order matters. If you can't answer (1) and (2), don't try to answer (3)–(6
 - **Aspirational metrics.** "Increase NPS by 10 points." → not a 4-week leading indicator.
 - **Constraint laundering.** Listing nice-to-haves as "constraints." Constraints are things that, if violated, *kill the project*. Everything else is a preference.
 - **Skipping #4.** Most common omission. Almost every "new" idea has been tried — find out how, fast.
+
+## Interview adaptation
+
+In a PM interview (live whiteboard, product design round, or take-home), the 6 questions **are** the answer template. The hard part isn't knowing the framework — it's compressing it into 30–45 minutes without skipping the high-signal questions.
+
+### Why these six map to PM interview signals
+
+Every PM interviewer is implicitly grading on the same axes:
+
+| Q | What it signals to the interviewer |
+|---|---|
+| 1. Who is the customer? | Segmentation — you don't say "everyone" |
+| 2. JTBD / problem in their words | Customer empathy, problem framing |
+| 3. What does good look like? | Vision, concrete success state |
+| 4. What's been tried, and why did it fail? | Prior art — **strongest differentiator**, most candidates skip it |
+| 5. Constraints | Pragmatism, tradeoff awareness |
+| 6. How will you know it worked? | Metric thinking, hypothesis discipline |
+
+This subsumes CIRCLES, AARM, and most "design X for Y" frameworks. If you've internalized the 6, you don't need to memorize the others.
+
+### Compressed flow for a 30–45 min live interview
+
+1. **Open with Q1 + Q2** (~90 sec) — *"Let me first define the customer and the job they're trying to do."* Pause for interviewer alignment before going further.
+2. **Q3 + Q6 together** (~2 min) — *"Here's what good looks like, and the metric I'd watch."* This is your hypothesis.
+3. **Q5 constraints** (~1 min) — surface 2–3 real ones (compliance, surface, latency, org).
+4. **Sketch the prototype** (the rest of the time) — wireframe or describe the experience, with every design choice tied back to the JTBD (Q2) or a constraint (Q5).
+5. **Q4 (tried & failed)** — sprinkle throughout, not as a standalone block: *"This sounds like the X feature, but that failed because Y, so I'd avoid that by Z."* This is the move that separates senior from junior.
+
+### Interview-specific pitfalls
+
+- **Jumping to UI before defining the customer** — the interviewer immediately knows you skipped Q1
+- **One vague metric** ("engagement", "delight") instead of leading + lagging + threshold (Q6 done right)
+- **Listing nice-to-haves as constraints** — real constraints would kill the project; preferences wouldn't
+- **Skipping Q4 entirely** — every PM interviewer is checking whether you do prior art; ignoring it reads as junior
+
+### If it's a take-home (not live)
+
+Use the full 6-question template up top (10–15 min), then pick the build tool that fits the shape:
+
+| Take-home shape | Recommended tool |
+|---|---|
+| 1-week PM design review | Figma wireframes |
+| AI-PM "build something" prompt | **v0**, **Lovable**, or **Bolt** (text-to-prototype) |
+| One-shot HTML/JS demo | **Claude Canvas** or **ChatGPT Canvas** |
+| Multi-day, code-heavy, will-be-graded | [Spec Kit](../concepts/spec-kit-for-vibe-coding.md) |
+
+The context doc still goes at the top of every take-home — graders skim for it.
 
 ## Examples / case studies
 

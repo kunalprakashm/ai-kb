@@ -31,4 +31,9 @@
 - Refinement (not filed back per user choice): the dimensions are orthogonal. **Context doc is always upstream of building** (scales 5 min for prototype → 30 min for production). **Spec Kit's intensity scales with stakes** (skip for throwaway, full for production).
 - Common prototype failure ≠ sloppy code; it's "we built the wrong thing because we skipped JTBD / what's-been-tried." A 5-min context doc catches that.
 - Decision flow: Vague idea → context doc → decide to build → {prototype: vibe code or light Spec Kit | production: full Spec Kit}.
-- User opted to keep the answer in chat history only; no wiki update.
+## [2026-05-10] query | "In an interview to create prototypes, what should I use?"
+
+- Answer: Context doc, definitively — not Spec Kit. The 6 questions map directly to PM interview signals.
+- Filed back: added "Interview adaptation" section to `wiki/playbooks/context-doc-for-prototyping.md` — compressed 30–45 min flow, interview pitfalls, take-home tool table.
+- Also added "PM interviews" to the "When to use" list at the top, and `interview` tag to frontmatter.
+- Updated: `wiki/playbooks/context-doc-for-prototyping.md`
